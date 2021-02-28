@@ -1,10 +1,50 @@
-<div class="dropdown-container">
-  <div class="labelContainer" #title>Lorem Ipsum</div>
-  <div class="content">
-    <li>Lorem Ipsum</li>
-    <li>Lorem Ipsum</li>
-    <li>Lorem Ipsum</li>
-    <li>Lorem Ipsum</li>
-    <li>Lorem Ipsum</li>
+<div class="dropdown-container" tabindex="-1" (blur)="mouseLeave()">
+  <div #labelContainer class="labelContainer" (click)="clickEvent()">
+    <span><ng-content></ng-content></span>
+    <span
+      class="arrow-icon"
+      [ngClass]="{ up: showContent, down: !showContent }"
+    >
+      <svg
+        width="14"
+        height="13"
+        viewBox="0 0 14 13"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g clip-path="url(#clip0)">
+          <path
+            d="M10.5 8.125L7 4.875L3.5 8.125"
+            stroke="#676767"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0">
+            <rect
+              width="14"
+              height="13"
+              fill="white"
+              transform="translate(14 13) rotate(-180)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+    </span>
+  </div>
+  <div class="content" [ngClass]="{ show: showContent }">
+    <ng-container *ngFor="let selected of dataPass">
+      <li [ngClass]="{ notPadded: selected.children }">
+        <div *ngIf="!selected.children" class="title">{{ selected.title }}</div>
+        <ng-container *ngIf="selected.children">
+          <app-collapsible [data]="selected.children">{{
+            selected.title
+          }}</app-collapsible>
+        </ng-container>
+      </li></ng-container
+    >
+
+    <!-- <app-collapsible title=""></app-collapsible> -->
   </div>
 </div>

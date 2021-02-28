@@ -1,0 +1,28 @@
+.title {
+  display: flex;
+  padding: 0.5rem;
+}
+.title .arrow-icon {
+  display: flex;
+  align-items: center;
+  margin-left: 4px;
+}
+.title .arrow-icon.up {
+  transform: rotate(0deg);
+}
+.title .arrow-icon.down {
+  transform: rotate(180deg);
+}
+.content.show {
+  display: block;
+}
+.content.hide {
+  display: none;
+}
+.content {
+  background: #f1f1f1;
+  padding: 0rem 0.5rem;
+}
+.content li {
+  padding: 0.5rem 0;
+}

@@ -1,6 +1,17 @@
-<!-- <ul class="nav-container" #navbar>
-  <li *ngFor="let menu of menus;let i = index;">
-    <div>{{ menu.title }}</div>
-  </li>
-</ul> -->
-<app-dropdown></app-dropdown>
+<div class="nav-parent-container">
+  <ul class="nav-container" #navbar>
+    <li *ngFor="let menu of menus; let i = index">
+      <div *ngIf="!menu.children">{{ menu.title }}</div>
+      <ng-container *ngIf="menu.children">
+        <app-dropdown [data]="menu.children">
+          {{ menu.title }}
+        </app-dropdown>
+      </ng-container>
+    </li>
+  </ul>
+  <ul class="nav-container">
+    <li class="menus" *ngIf="showMore.length > 0">
+      <app-dropdown [data]="showMore">Show More</app-dropdown>
+    </li>
+  </ul>
+</div>

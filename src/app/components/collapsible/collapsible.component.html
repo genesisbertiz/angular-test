@@ -1,0 +1,41 @@
+<div class="collapsibleContainer" (blur)="mouseLeave()">
+  <div class="title" (click)="clickEvent()">
+    <span><ng-content></ng-content></span>
+    <span
+      class="arrow-icon"
+      [ngClass]="{ up: showContent, down: !showContent }"
+    >
+      <svg
+        width="14"
+        height="13"
+        viewBox="0 0 14 13"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g clip-path="url(#clip0)">
+          <path
+            d="M10.5 8.125L7 4.875L3.5 8.125"
+            stroke="#676767"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </g>
+        <defs>
+          <clipPath id="clip0">
+            <rect
+              width="14"
+              height="13"
+              fill="white"
+              transform="translate(14 13) rotate(-180)"
+            />
+          </clipPath>
+        </defs>
+      </svg>
+    </span>
+  </div>
+  <div class="content" [ngClass]="{ show: showContent, hide: !showContent }">
+    <ng-container *ngFor="let selected of data">
+      <li>{{ selected.title }}</li>
+    </ng-container>
+  </div>
+</div>

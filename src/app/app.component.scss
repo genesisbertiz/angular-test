@@ -1,3 +1,8 @@
+.nav-parent-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
 ul.nav-container {
   list-style-type: none;
   clear: both;
@@ -7,16 +12,32 @@ ul.nav-container {
   align-items: center;
   justify-content: center;
   height: fit-content;
-  background: #f1f1f1;
+  position: relative;
+  li.hide {
+    display: none !important;
+  }
   li {
+    position: relative;
+    display: block;
     height: 50px;
     list-style-type: none;
-    clear:both;
+    clear: both;
     display: flex;
     align-items: center;
     justify-content: center;
     height: -webkit-fill-available;
     padding: 0.5rem 2rem;
-        background: aliceblue;
+    border-left: 1px solid #f1f1f1;
+    border-bottom: 1px solid #f1f1f1;
+    &:last-child {
+      border-right: 1px solid #f1f1f1;
+    }
+
+    .arrow-icon {
+      display: flex;
+      align-items: center;
+      margin-left: 0.5rem;
+    }
+    // background: aliceblue;
   }
 }
