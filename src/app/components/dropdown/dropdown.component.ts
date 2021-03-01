@@ -1,7 +1,7 @@
 import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, Component, ElementRef, HostBinding, HostListener, Input, OnChanges, OnInit, ViewChild } from "@angular/core";
 import { TweenLite } from 'gsap'
 import { MenusInterface } from "src/app/app.component";
-import _ from 'lodash'
+import * as _ from 'lodash'
 @Component({
   selector: "app-dropdown",
   templateUrl: "./dropdown.component.html",
