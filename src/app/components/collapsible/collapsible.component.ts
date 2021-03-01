@@ -1,13 +1,13 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { MenusInterface } from "src/app/app.component";
+import { MenusInterface } from "../../app.component";
 
 @Component({
   selector: "app-collapsible",
   templateUrl: "./collapsible.component.html",
-  styleUrls: ["./collapsible.component.scss"],
+  styleUrls: ["./collapsible.component.scss"]
 })
 export class CollapsibleComponent implements OnInit {
-  @Input() data: MenusInterface;
+  @Input() data: MenusInterface[];
   showContent = false;
   constructor() {}
 

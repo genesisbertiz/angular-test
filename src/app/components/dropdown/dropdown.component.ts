@@ -12,7 +12,7 @@ import {
   ViewChild
 } from "@angular/core";
 //import { TweenLite } from 'gsap'
-import { MenusInterface } from "src/app/app.component";
+import { MenusInterface } from "../../app.component";
 import * as _ from "lodash";
 @Component({
   selector: "app-dropdown",
